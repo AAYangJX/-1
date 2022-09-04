@@ -1,0 +1,26 @@
+//环形链表 
+//快慢指针
+ bool hasCycle(ListNode *head) {
+	 ListNode * fast=head;
+	 ListNode * slow=head;
+	 if(head==nullptr)
+	 {
+		 return false;
+	 }
+	 else
+	 {
+		 while(fast!=nullptr && fast->next!=nullptr)//
+		 //快指针到终点以后 满指针正好是一半 
+		 {
+			 slow=slow->next;
+			 fast=fast->next->next;
+			 
+			 if(slow==fast)
+			 {
+				 return true;
+			 }
+		 }
+		 return false;
+	 }
+        
+    }
